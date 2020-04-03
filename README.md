@@ -9,7 +9,8 @@ Wrote the python script to scrap through stMgr.log logfile. The file has log lin
 2020-04-01-18:00:02.688 [] [opId=5dfc80ae7de9a993, operationId=5dfc80ae7de9a993.5dfc80ae7de9a993<:5dfc80ae7de9a993] [New I/O worker #9] DEBUG c.s.s.c.z.m.ZKStatusManager - Checking if ZK leader/follower for host: 192.168.5.144
 
 
-The idea is to pickup all lines that begin with the date (loglines run multiple new lines) and convert the log file into a CSV.
+The idea is to pickup all lines that begin with the date (loglines run multiple new lines)
+and convert the log file into a CSV.
 
 The script will pickup at this time three critical things from a log line:
 
