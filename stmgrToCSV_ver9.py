@@ -10,7 +10,7 @@ __author__     = 'Upinder Sujlana'
 __copyright__  = 'Copyright 2020, stMgr.log analysis & Data Analysis'
 __version__    = '1.0.9'
 __maintainer__ = 'Upinder Sujlana'
-__email__      = 'usujlana@cisco.com'
+__email__      = ''
 __status__     = 'prod'
 #----------------------------------------------------------------------------------------------------
 def getFileName():
@@ -29,13 +29,13 @@ def getFileContents(file_name):
         with open(file_name) as file:
             tmp_list=[line.strip() for line in file]
     except Exception as e:
-        print ( "getFileContents : A. Something bad happened.Please send your file and script details etc to usujlana@cisco.com" )
+        print ( "getFileContents : A. Something bad happened.Please send your file and script details etc to Upinder Sujlana" )
         print ( str(e)  )
 
     try:
         no_empty = [x.strip() for x in tmp_list if x.strip()]
     except Exception as e:
-        print ( "getFileContents : B. Something bad happened.Please send your file and script details etc to usujlana@cisco.com" )
+        print ( "getFileContents : B. Something bad happened.Please send your file and script details etc to Upinder Sujlana" )
         print ( str(e)  )
 
     return no_empty
@@ -58,14 +58,14 @@ def check_if_line_starts_with_date(line):
             if lll[i]:
                 booleanindex.append(lll[i].isdigit())
     except Exception as e:
-        print ( "check_if_line_starts_with_date : A. Something bad happened.Please send your file and script details etc to usujlana@cisco.com" )
+        print ( "check_if_line_starts_with_date : A. Something bad happened.Please send your file and script details etc to Upinder Sujlana" )
         print ( str(e)  )
     try:
         for j in charactersindex:
             if lll[j]:
                 booleanindex.append(lll[j] in specialcharacter)
     except Exception as e:
-        print ( "check_if_line_starts_with_date : B. Something bad happened.Please send your file and script details etc to usujlana@cisco.com" )
+        print ( "check_if_line_starts_with_date : B. Something bad happened.Please send your file and script details etc to Upinder Sujlana" )
         print ( str(e)  )
 
     #Lets determine if all the criterias were met to confirm a date string. If not met than this is not a string that begins with date.
@@ -90,11 +90,11 @@ def createACraftylist(long_list):
 
     try:
         if not scrappy_without_empty:
-            print ("createACraftylist : Something bad happened.Please send your file and script details etc to usujlana@cisco.com")
+            print ("createACraftylist : Something bad happened.Please send your file and script details etc to Upinder Sujlana")
         else:
             return scrappy_without_empty
     except Exception, e:
-        print >> sys.stderr, "Exception : createACraftylist : Something bad happened.Please send your file and script details etc to usujlana@cisco.com"
+        print >> sys.stderr, "Exception : createACraftylist : Something bad happened.Please send your file and script details etc to Upinder Sujlana"
         print >> sys.stderr, "Exception: %s" % str(e)
         sys.exit(1)
 
@@ -108,7 +108,7 @@ def createListOfTuples(filetolist):
                 mo = re.search(r'(\d{4}\-\d{2}\-\d{2}\-\d{2}\:\d{2}\:\d+\.\d+)\s+(\[.*\])\s+(\[.*\])\s+(\[.*\])\s+([A-Z]+)\s+(.+)\s+\-\s+(.*)',str1,flags=re.MULTILINE | re.DOTALL)
                 listOfTuples.append( ( mo.group(1) , mo.group(5), mo.group(7) ) )
     except Exception as e:
-        print ( "createListOfTuples : Something bad happened.Please send your file and script details etc to usujlana@cisco.com" )
+        print ( "createListOfTuples : Something bad happened.Please send your file and script details etc to Upinder Sujlana" )
         print ( str(e)  )
 
     return listOfTuples
